@@ -3,6 +3,9 @@
 ## Note
 This code is only meant for a small school project, I wouldn't recommend using this shit, it's bad.
 
+this is a command-line program that allows you to control a database of books.
+it allows you to view books and authors, add/remove books, and it has a borrowing system.
+
 
 ## instructions
 

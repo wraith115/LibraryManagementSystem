@@ -1,6 +1,7 @@
 import pandas as pd
 import sqlite3
 
+# change the name to your excel file 
 books = pd.read_excel(  
     'sampleData.xlsx', 
     sheet_name='data (9)',

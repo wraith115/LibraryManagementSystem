@@ -8,7 +8,6 @@ This code is only meant for a small school project, I wouldn't recommend using t
 
 1- use the data formation in the excel sample to put your books in an excel file.
 
-ادخل معلومات الكتب في ملف(csv)
 
 ثم ادخلها في ملف اكسل, واستخدم نفس الشكل في ملف الاكسل الموجود في هذا المجلد
 

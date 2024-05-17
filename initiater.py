@@ -1,5 +1,6 @@
 import sqlite3
 conn = sqlite3.connect('flameLibrary.db')
+#if you want to change the db name ^  make sure to change it in the other files aswell
         
 conn.execute("""
     CREATE TABLE books(

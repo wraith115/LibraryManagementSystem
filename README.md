@@ -22,7 +22,7 @@ it allows you to view books and authors, add/remove books, and it has a borrowin
 استخدم pip
 
 
-3-run initiater.py  (creates the database file in using sqlite)
+3-run initiater.py  (creates the database file using sqlite3)
 
 قم بتشغيل initiater.py
  (سيقوم بإنشاء قاعدة بيانات باستخدامsql)

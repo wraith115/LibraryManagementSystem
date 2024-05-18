@@ -13,9 +13,9 @@ conn.execute("""
         UNIQUE(bookname) ON CONFLICT IGNORE
         )   
 
+    """)
 # location is meant to be a 2 character id to identify the location of the book: "A1". the letter specifying which bookshelf is it in
 # and the number specifiying in which shelf is the book in.
-    """)
 conn.execute("""
     CREATE TABLE borrowers(  
         borrower_name TEXT,

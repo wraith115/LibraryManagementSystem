@@ -11,7 +11,7 @@ today = today.strftime("%Y-%m-%d")
 print(today)
 
 print("Borrowers Late on Return: ")
-output = conn.execute("SELECT * FROM borrowers WHERE toReturn_date < ?",(today,))
+output = conn.execute("SELECT * FROM borrowers WHERE toReturn_date < ? AND Return_date is NULL",(today,))
 row = output.fetchone()
 while row is not None:
     print(str(row) + "\n")
@@ -61,7 +61,7 @@ while True:
 
 
     if command == "b":
-        bookid = input("Book id to borrow / or enter 'lb' to view borrowers: ")
+        bookid = input("Book id to borrow / or enter 'lb' to view current borrowers: ")
         if bookid == "lb":
             output = conn.execute("SELECT * FROM borrowers WHERE Return_date is NULL")
             row = output.fetchone()
@@ -85,9 +85,11 @@ while True:
 
                 nameBorrower = input("enter borrower name: ")
                 phonenumber = input("enter phone number: ")
+
                 today = datetime.datetime.now()
                 borrowed_date = today.strftime("%Y %m %d")
-                toReturn_date = input("enter return date YYYY MM DD: ")
+
+                toReturn_date = input("enter return date YYYY-MM-DD: ")
                 output = conn.execute("SELECT bookname FROM books WHERE book_id=?", (bookid,))
                 bookname = output.fetchone()[0]
                 conn.execute("INSERT INTO borrowers (borrower_name, borrower_phonenumber, book_id, bookname, borrowed_date, toReturn_date) VALUES (?, ?, ?, ?, ?, ?)", (nameBorrower, phonenumber, bookid, bookname, borrowed_date, toReturn_date))
@@ -97,7 +99,7 @@ while True:
 
 
             elif isAvailable == 0:
-                print("Book is not available \n")
+                print("Book is currently unavailable \n")
             else:
                 print("Book id not found in the database")
 
